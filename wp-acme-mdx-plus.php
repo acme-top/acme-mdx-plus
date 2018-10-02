@@ -3,7 +3,7 @@
 /**
  * Plugin Name: WP ACME MDX PLUS
  * Plugin URI: https://github.com/acme-top/wp-acme-mdx-plus
- * Description: MDX增强插件
+ * Description: MDX增强插件，建议仅在使用的主题为MDX时启用，否则可能会发生不可预知的结果
  * Version: 0.1
  * Author: Acme
  * Author URI: http://www.acme.top
@@ -80,7 +80,7 @@ class Acme_Mdx_Plus
 	 * @return      string
 	 */
 	public function para_add_custom_class( $matches ) {
-		$class = str_replace('.', ' callout-', $matches[1]);
+		$class = str_replace('.', ' ', $matches[1]);
 		if ( strpos($matches[2], '<em>') === 0 ) {
 			$matches[2] = preg_replace('#^<em>(.*?)</em>[\:,\.\!：，。！ ]*([\w\W]*)#', "<em class=\"callout-title\">$1</em><p>$2</p>", $matches[2]);
 		}
@@ -96,7 +96,7 @@ class Acme_Mdx_Plus
 	 * @return      string
 	 */
 	public function multi_para_add_custom_class( $matches ) {
-		$class = str_replace('.', ' callout-', $matches[1]);
+		$class = str_replace('.', ' ', $matches[1]);
 		if ( strpos($matches[2], '<p><em>') !== false ) {
 			$matches[2] = preg_replace('#<p><em>(.*?)</em>[\:,\.\!：，。！ ]*#', "<em class=\"callout-title\">$1</em><p>", $matches[2]);
 		}
@@ -106,9 +106,34 @@ class Acme_Mdx_Plus
 
 	///////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * 保存文章后
+	 */
 	public function acme_wp_insert_post_data( $data, $postarr ){
 
-		$data['post_content'] = preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', array( $this, 'acme_process_image' ), stripslashes( $data['post_content'] ));
+		$types = [ 'post', 'page', 'revision' ];
+
+		// 仅当POST内容为指定的类型时才进行处理
+		if ( !in_array( $data['post_type'], $types )){
+			return $data;
+		}
+
+		// 是否使文章或者页面支持Markdown语法
+		$wpcom_publish_posts_with_markdown = get_option( 'wpcom_publish_posts_with_markdown' );
+
+		// 仅在开启markdown语法后才对图片、表格进行处理
+		if( !$wpcom_publish_posts_with_markdown ){
+			return $data;
+		}
+
+		// 还原转义的字符串
+		$data['post_content'] = stripslashes( $data['post_content'] );
+
+		// 处理图片
+		$data['post_content'] = preg_replace_callback('#<(img)([^>]+?)(>(.*?)</\\1>|[\/]?>)#si', array( $this, 'acme_process_image' ), $data['post_content'] );
+
+		// 处理表格
+		$data['post_content'] = preg_replace_callback('#<(table)([^>]*?)>#si', array( $this, 'acme_process_table' ), $data['post_content'] );
 
 		return $data;
 	}
@@ -150,8 +175,6 @@ class Acme_Mdx_Plus
 			$data = get_post_meta( $post_id, '_wp_attachment_metadata', true );
 		}
 
-		
-
 		// 宽度
 		$img['width'] = [
 			'name' => 'width',
@@ -170,6 +193,37 @@ class Acme_Mdx_Plus
 
 		$html = '<img width="' . $img['width']['value'] . '" height="' . $img['height']['value'] . '" class="aligncenter ' . $img['class']['value'] . '" src="' . $img['src']['value'] . '" alt="' . $img['src']['value'] . '">';
 		
+		return $html;
+	}
+
+	/**
+	 * 处理表格，为表格添加class样式：mdui-table
+	 */
+	public function acme_process_table( $matches ) {
+		$old_attributes_str = $matches[2];
+		$attrs = wp_kses_hair( $old_attributes_str, wp_allowed_protocols() );
+
+		if( empty($attrs['class']) ){
+			$attrs['class'] = [
+				'name' => 'class',
+				'value' => '',
+				'whole' => 'class=""',
+				'vless' => 'n',
+			];
+		}
+
+		$html = "<table";
+
+		foreach( $attrs as $name => $attr ){
+			if( $name == "class" ){
+				$attr['value'] .= (empty( $attr['value'] ) ? '' : ' ') . 'mdui-table';
+			}
+
+			$html .= ' ' . $name . '="' . $attr['value'] . '"';
+		}
+
+		$html .= '>';
+
 		return $html;
 	}
 

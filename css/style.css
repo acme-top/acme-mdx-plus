@@ -62,40 +62,40 @@ article p a:only-child {
     margin: 0 auto;
 }
 
-.callout.callout-danger blockquote {
+.callout.danger blockquote {
     background-color: #ffe6e6;
     border-color: #c00;
     color: #4d0000;
 }
 
-.callout.callout-danger blockquote p {
+.callout.danger blockquote p {
     color: #4d0000;
 }
 
-.callout.callout-danger blockquote p strong {
+.callout.danger blockquote p strong {
     color: #900;
 }
 
-.callout.callout-warning blockquote {
+.callout.warning blockquote {
     background-color: rgba(255, 229, 100, .3);
     border-color: #e7c000;
     color: #6b5900;
 }
 
-.callout.callout-warning blockquote p {
+.callout.warning blockquote p {
     color: #6b5900;
 }
 
-.callout.callout-warning blockquote p strong {
+.callout.warning blockquote p strong {
     color: #b29400;
 }
 
-.callout.callout-tip blockquote {
+.callout.tip blockquote {
     background-color: #f3f5f7;
     border-color: #42b983;
 }
 
-.callout.callout-tip blockquote p a {
+.callout.tip blockquote p a {
     color: #3eaf7c;
 }
 

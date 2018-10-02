@@ -28,28 +28,26 @@ $.fn.mdxToc = function (options) {
         container: $(window),
         // 目录激活时的样式，返回的格式必须为Jquery可用的cssText格式
         getActiveStyle: function () {
-            var theme_color = $("meta[name='theme-color']").attr('content');
-            return "color: " + theme_color + " !important; border-left-color: " + theme_color;
+            return "color: #2f2f2f !important; border-left-color: #2f2f2f; font-weight: 500;";
         },
         // 目录未激活时的样式，返回的格式必须为Jquery可用的cssText格式
         getNotActiveStyle: function () {
-            return "color: #2f2f2f; border-left-color: #cacaca;";
+            return "color: #8E8E8E; border-left-color: #cacaca; font-weight: 400;";
         },
         // 获取固定位置是距离顶部的位置
         getFixedTop: function () {
-            if ($(".titleBarGobal").hasClass("mdui-headroom-unpinned-top")) {
-                return 10;
-            }
-            return $(".titleBarGobal").height() + 10;
+            return 20;
         },
         // 获取距离顶部的距离
         getTop: function () {
-            return $(".PostTitleFill").height() + 10;
+            return 200;
         },
-        // 获取距离右侧的距离
-        getLeft: function () {
-            return $(".PostMain article").offset().left + $(".PostMain article").width() + parseFloat($(".PostMain article").css("margin-right")) + 10;
+        // 获取距离右侧的距离，优先级比getLeft()要低
+        getRight: function () {
+            return 10;
         },
+        // 获取距离左侧的距离
+        getLeft: null,
         // 计算位置
         // @param scrollTop 当前滚动的高度
         calPosition: function (scrollTop, defaultOffsetTop) {
@@ -74,9 +72,20 @@ $.fn.mdxToc = function (options) {
             } else {
                 nav.css({
                     top: defaultOffsetTop,
-                    left: this.getLeft(),
                     position: ''
                 });
+
+                if ($.isFunction(this.getLeft)) {
+                    nav.css({
+                        left: this.getLeft(),
+                    });
+                } else if ($.isFunction(this.getRight)) {
+                    nav.css({
+                        right: this.getRight()
+                    });
+                } else {
+                    console.error("未定义getRight()或者getLeft()");
+                }
             }
         }
     };
@@ -100,7 +109,7 @@ $.fn.mdxToc = function (options) {
         return element;
     }
 
-    if($(element).find(":header").length == 0){
+    if ($(element).find(":header").length == 0) {
         return element;
     }
 
@@ -117,11 +126,7 @@ $.fn.mdxToc = function (options) {
     }
 
     // 初始化位置
-    nav.css({
-        'position': 'absolute',
-        'top': params.getTop(),
-        'left': params.getLeft()
-    });
+    params.calPosition();
 
     if (nav.html() == '') {
 
