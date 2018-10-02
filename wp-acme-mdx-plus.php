@@ -138,10 +138,19 @@ class Acme_Mdx_Plus
 		$post_id = attachment_url_to_postid($url);
 
 		if(empty($post_id)){
-			return $matches[0];
+			$size = @getimagesize($img['src']['value']);
+
+			if($size == false){
+				return $matches[0];
+			}
+
+			$data['width'] = $size[0];
+			$data['height'] = $size[1];
+		}else{
+			$data = get_post_meta( $post_id, '_wp_attachment_metadata', true );
 		}
 
-		$data = get_post_meta( $post_id, '_wp_attachment_metadata', true );
+		
 
 		// 宽度
 		$img['width'] = [

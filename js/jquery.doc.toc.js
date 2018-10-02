@@ -100,6 +100,10 @@ $.fn.mdxToc = function (options) {
         return element;
     }
 
+    if($(element).find(":header").length == 0){
+        return element;
+    }
+
     // 标题元素和导航元素
     var target = $(this).find("h" + params.start_level);
 
