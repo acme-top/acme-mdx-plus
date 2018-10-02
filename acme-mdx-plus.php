@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: WP ACME MDX PLUS
- * Plugin URI: https://github.com/acme-top/wordpress-remove-row-actions
+ * Plugin URI: https://github.com/acme-top/wp-acme-mdx-plus
  * Description: MDX增强插件
  * Version: 0.1
  * Author: Acme
