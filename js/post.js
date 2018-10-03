@@ -19,6 +19,9 @@ $().ready(function () {
         },
         // 获取距离顶部的距离
         getTop: function () {
+            if ($(".PostTitleFillBack2").length > 0) {
+                return $(".PostTitleFillBack2").height() + 10;
+            }
             return $(".PostTitleFill").height() + 10;
         },
         // 获取距离右侧的距离
