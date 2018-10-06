@@ -36,7 +36,7 @@ class Acme_Mdx_Plus
 	 * 载入css & js
 	 */
 	public function acme_mdx_css(){
-		wp_register_style('acme_mdx_plus_css', plugin_dir_url(__FILE__) . 'css/style.css', array( 'mdx_mdui_css' ), '1.1', 'all', true);
+		wp_register_style('acme_mdx_plus_css', plugin_dir_url(__FILE__) . 'css/style.css', array( 'mdx_mdui_css' ), '1.0', 'all', true);
 		wp_enqueue_style('acme_mdx_plus_css');
 	}
 
@@ -45,8 +45,8 @@ class Acme_Mdx_Plus
 	 */
 	public function acme_mdx_js(){
 		if(is_single() || is_page()){
-			wp_register_script('acme_mdx_plus_doc_toc_js', plugin_dir_url(__FILE__) . 'js/jquery.doc.toc.js', array( 'mdx_jquery' ), '1.1', true);
-			wp_register_script('acme_mdx_plus_post_js', plugin_dir_url(__FILE__) . 'js/post.js', array( 'acme_mdx_plus_doc_toc_js' ), '1.1', true);
+			wp_register_script('acme_mdx_plus_doc_toc_js', plugin_dir_url(__FILE__) . 'js/jquery.doc.toc.js', array( 'mdx_jquery' ), '1.0', true);
+			wp_register_script('acme_mdx_plus_post_js', plugin_dir_url(__FILE__) . 'js/post.js', array( 'acme_mdx_plus_doc_toc_js' ), '1.0', true);
 			wp_enqueue_script('acme_mdx_plus_doc_toc_js');
 			wp_enqueue_script('acme_mdx_plus_post_js');
 		}

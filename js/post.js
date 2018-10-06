@@ -1,14 +1,16 @@
 $().ready(function () {
+
+    // 设置主题颜色
+    $(".sideImg").addClass("mdui-color-theme");
+
+    var theme_color = $("meta[name='theme-color']").attr('content');
+
     // 初始化文章目录
     $('.PostMain article').mdxToc({
-        // 目录激活时的样式，返回的格式必须为Jquery可用的cssText格式
-        getActiveStyle: function () {
-            var theme_color = $("meta[name='theme-color']").attr('content');
-            return "color: " + theme_color + " !important; border-left-color: " + theme_color;
-        },
-        // 目录未激活时的样式，返回的格式必须为Jquery可用的cssText格式
-        getNotActiveStyle: function () {
-            return "color: #2f2f2f; border-left-color: #cacaca;";
+        // 活动状态发生改变时的事件
+        activeChange: function (elements, active_element) {
+            $(elements).css("cssText", "color: #2f2f2f; border-left-color: #cacaca;");
+            $(active_element).css("cssText", "color: " + theme_color + " !important; border-left-color: " + theme_color);
         },
         // 获取固定位置是距离顶部的位置
         getFixedTop: function () {
@@ -21,6 +23,8 @@ $().ready(function () {
         getTop: function () {
             if ($(".PostTitleFillBack2").length > 0) {
                 return $(".PostTitleFillBack2").height() + 10;
+            } else if ($(".PostTitleFillPage").length > 0) {
+                return $(".PostTitleFillPage").height() + 10;
             }
             return $(".PostTitleFill").height() + 10;
         },

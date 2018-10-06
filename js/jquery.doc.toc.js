@@ -26,13 +26,10 @@ $.fn.mdxToc = function (options) {
         nav: null,
         // 滚动容器
         container: $(window),
-        // 目录激活时的样式，返回的格式必须为Jquery可用的cssText格式
-        getActiveStyle: function () {
-            return "color: #2f2f2f !important; border-left-color: #2f2f2f; font-weight: 500;";
-        },
-        // 目录未激活时的样式，返回的格式必须为Jquery可用的cssText格式
-        getNotActiveStyle: function () {
-            return "color: #8E8E8E; border-left-color: #cacaca; font-weight: 400;";
+        // 活动状态发生改变时的事件
+        activeChange: function (elements, active_element) {
+            $(elements).css("cssText", "color: #8E8E8E; border-left-color: #cacaca; font-weight: 400;");
+            $(active_element).css("cssText", "color: #2f2f2f !important; border-left-color: #2f2f2f; font-weight: 500;");
         },
         // 获取固定位置是距离顶部的位置
         getFixedTop: function () {
@@ -50,12 +47,13 @@ $.fn.mdxToc = function (options) {
         getLeft: null,
         // 计算位置
         // @param scrollTop 当前滚动的高度
+        // @param defaultOffsetTop 默认距离顶部的位置
         calPosition: function (scrollTop, defaultOffsetTop) {
             // 目前滚动的高度
             if (scrollTop == undefined) {
                 scrollTop = $(this).scrollTop();
             }
-
+            // 当前距离顶部的位置
             if (defaultOffsetTop == undefined) {
                 defaultOffsetTop = this.getTop();
             }
@@ -95,11 +93,6 @@ $.fn.mdxToc = function (options) {
     // 切换类名
     var ACTIVE = 'active';
 
-    // 激活状态下的样式
-    var active_style = params.getActiveStyle();
-    // 未激活状态下的样式
-    var not_active_style = params.getNotActiveStyle();
-
     var element = $(this);
 
     // 滚动容器
@@ -124,9 +117,6 @@ $.fn.mdxToc = function (options) {
         nav = $('<div class="doc-toc"></div>');
         nav_clone = $('<div class="doc-toc"></div>');
     }
-
-    // 初始化位置
-    params.calPosition();
 
     if (nav.html() == '') {
 
@@ -166,6 +156,9 @@ $.fn.mdxToc = function (options) {
 
     // 偏移位置
     var defaultOffsetTop = params.getTop();
+
+    // 初始化位置
+    params.calPosition($(this).scrollTop(), defaultOffsetTop);
 
     // 改变窗口大小重新设置定位
     container.on('resize', function () {
@@ -209,8 +202,13 @@ $.fn.mdxToc = function (options) {
         var elNavs = nav.find("li");
         var elTargetNav = elNavs.eq(indexNav);
         if (elTargetNav.hasClass(ACTIVE) == false) {
-            elNavs.removeClass(ACTIVE).css("cssText", not_active_style);
-            elTargetNav.addClass(ACTIVE).css("cssText", active_style);
+            // 改变样式
+            elNavs.removeClass(ACTIVE);
+            elTargetNav.addClass(ACTIVE);
+            // 触发change事件
+            if ($.isFunction(params.activeChange)) {
+                params.activeChange.call(params, elNavs, elTargetNav);
+            }
         }
 
         // 重新计算位置
