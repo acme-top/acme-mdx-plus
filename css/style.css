@@ -188,6 +188,7 @@ body.mdui-theme-layout-dark .mdui-typo blockquote p {
 
 body.mdui-theme-layout-dark .doc-toc:before {
     color: hsla(0, 0%, 100%, .8) !important;
+    border-left: 4px solid #525252;
 }
 
 .doc-toc ul {
@@ -207,6 +208,7 @@ body.mdui-theme-layout-dark .doc-toc:before {
 
 body.mdui-theme-layout-dark .doc-toc>ul>li {
     color: hsla(0, 0%, 100%, .8) !important;
+    border-left: 4px solid #525252 !important;
 }
 
 .doc-toc>ul>li:first-child {

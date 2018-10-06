@@ -10,7 +10,7 @@ $().ready(function () {
         // 活动状态发生改变时的事件
         activeChange: function (elements, active_element) {
             $(elements).css("cssText", "color: #2f2f2f; border-left-color: #cacaca;");
-            $(active_element).css("cssText", "color: " + theme_color + " !important; border-left-color: " + theme_color);
+            $(active_element).css("cssText", "color: " + theme_color + " !important; border-left-color: " + theme_color + " !important;");
         },
         // 获取固定位置是距离顶部的位置
         getFixedTop: function () {
