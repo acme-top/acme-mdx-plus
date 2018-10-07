@@ -282,90 +282,94 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
 
 
 /* 老婆大人帮修改的 - start */
-.mdui-grid-tile-title,
-.postDiv {
-    display: flex !important;
-}
 
-.mdui-card-media img {
-    height: 100%;
-}
+@media (min-width: 1024px) {
 
-.postDiv {
-    max-width: 1040px !important;
-    overflow: hidden;
-    margin: 0 20px 40px;
-    min-height: 300px;
-    background: #fff 50%;
-    transition: all .5s ease;
-}
+    .mdui-grid-tile-title,
+    .postDiv.list-style-plus {
+        display: flex !important;
+    }
 
-.mdui-card-actions {
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: justify;
-    justify-content: space-betwee;
-    padding: 20px;
-}
+    .postDiv.list-style-plus .mdui-card-media img {
+        height: 100%;
+    }
 
-.underline {
-    display: none;
-}
+    .postDiv.list-style-plus {
+        max-width: 1040px !important;
+        overflow: hidden;
+        margin: 0 20px 40px;
+        min-height: 300px;
+        transition: all .5s ease;
+    }
 
-.info {
-    position: absolute;
-    bottom: 20px;
-}
+    .staDiv.list-style-plus {
+        min-height: 170px;
+    }
 
-.mdui-card-actions .mdui-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 0;
-    margin: 0px;
-}
+    .postDiv.list-style-plus .mdui-card-actions {
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: justify;
+        justify-content: space-betwee;
+        padding: 20px;
+    }
 
-.outofSta {
-    width: 100%;
-    max-width: 100% !important;
-}
+    .postDiv.list-style-plus .underline {
+        display: none;
+    }
 
+    .postDiv.list-style-plus .info {
+        position: absolute;
+        bottom: 20px;
+    }
 
-@media (min-width: 795px) {
-    .postDiv {
+    .postDiv.list-style-plus .mdui-card-actions .mdui-btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 0;
+        margin: 0px;
+    }
+
+    .postDiv.list-style-plus .outofSta {
+        width: 100%;
+        max-width: 100% !important;
+    }
+
+    .postDiv.list-style-plus {
         flex: 1 1 100%;
         -ms-flex-direction: row;
         flex-direction: row;
     }
 
-    .mdui-card-actions {
+    .postDiv.list-style-plus .mdui-card-actions {
         width: 32%;
         max-width: 32%;
     }
 
-    .mdui-card-media {
-        max-width: 68%;
+    .postDiv.list-style-plus .mdui-card-media {
+        width: 68%;
+    }
+
+    .postDiv.list-style-plus .mdui-card-media-covered {
+        display: none;
+    }
+
+    .postDiv.list-style-plus .mdui-card-actions h2 {
+        margin: 0;
+        display: block;
+        padding: 0 10px;
     }
 }
 
-@media (max-width: 794px) {
-    .postDiv {
-        display: block !important;
-    }
-
-    .underline {
+@media (max-width: 1023px) {
+    .postDiv.list-style-plus .mdui-card-media-covered {
         display: block;
     }
 
-    .info {
-        position: relative;
-        bottom: auto;
-    }
-
-    .mdui-card-media-covered .mdui-card-primary-title {
-        font-size: 20px;
-        line-height: 20px;
+    .postDiv.list-style-plus .mdui-card-actions h2 {
+        display: none;
     }
 }
 
