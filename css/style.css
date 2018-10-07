@@ -13,12 +13,7 @@ div.code-toolbar>.toolbar {
 }
 
 body.mdui-theme-layout-dark .mdui-drawer .sideImg {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
+    background-color: #2f2f2f !important;
 }
 
 .code-toolbar pre {
@@ -155,7 +150,7 @@ body.mdui-theme-layout-dark .mdui-typo blockquote p {
     }
 }
 
-/* TOC插件样式 */
+/* TOC插件样式 - start */
 
 .doc-toc {
     margin: 0;
@@ -257,6 +252,8 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
     }
 }
 
+/* TOC插件样式 - end */
+
 
 .PostMain .ArtMain0 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -282,3 +279,94 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
     background-blend-mode: multiply;
     background-image: url(../image/bg.png);
 }
+
+
+/* 老婆大人帮修改的 - start */
+.mdui-grid-tile-title,
+.postDiv {
+    display: flex !important;
+}
+
+.mdui-card-media img {
+    height: 100%;
+}
+
+.postDiv {
+    max-width: 1040px !important;
+    overflow: hidden;
+    margin: 0 20px 40px;
+    min-height: 300px;
+    background: #fff 50%;
+    transition: all .5s ease;
+}
+
+.mdui-card-actions {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-betwee;
+    padding: 20px;
+}
+
+.underline {
+    display: none;
+}
+
+.info {
+    position: absolute;
+    bottom: 20px;
+}
+
+.mdui-card-actions .mdui-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+    margin: 0px;
+}
+
+.outofSta {
+    width: 100%;
+    max-width: 100% !important;
+}
+
+
+@media (min-width: 795px) {
+    .postDiv {
+        flex: 1 1 100%;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .mdui-card-actions {
+        width: 32%;
+        max-width: 32%;
+    }
+
+    .mdui-card-media {
+        max-width: 68%;
+    }
+}
+
+@media (max-width: 794px) {
+    .postDiv {
+        display: block !important;
+    }
+
+    .underline {
+        display: block;
+    }
+
+    .info {
+        position: relative;
+        bottom: auto;
+    }
+
+    .mdui-card-media-covered .mdui-card-primary-title {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+/* 老婆大人帮修改的 - end */
