@@ -1,0 +1,63 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b725b9100031ab09a37423e88f3a9657",
+    "packages": [
+        {
+            "name": "jaxsonwang/wp-settings-api-class",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JaxsonWang/wp-settings-api-class.git",
+                "reference": "1972e0ff7f7cb95fd5b1de661c7106ff9f3db223"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JaxsonWang/wp-settings-api-class/zipball/1972e0ff7f7cb95fd5b1de661c7106ff9f3db223",
+                "reference": "1972e0ff7f7cb95fd5b1de661c7106ff9f3db223",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SettingsApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jaxson Wang",
+                    "email": "wangjin@boxrom.com",
+                    "homepage": "https://iiong.com"
+                }
+            ],
+            "description": "WordPress settings API Abstraction Class",
+            "homepage": "https://github.com/JaxsonWang/wp-settings-api-class",
+            "keywords": [
+                "settings-api",
+                "wordpress",
+                "wp"
+            ],
+            "time": "2018-04-28T08:23:22+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "jaxsonwang/wp-settings-api-class": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

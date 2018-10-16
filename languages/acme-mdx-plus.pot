@@ -1,0 +1,319 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WP ACME MDX PLUS\n"
+"POT-Creation-Date: 2018-10-13 21:58+0800\n"
+"PO-Revision-Date: 2018-10-13 21:57+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wp-acme-mdx-plus.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/utils/Debugger.php:39
+msgid "Operating System"
+msgstr ""
+
+#: src/utils/Debugger.php:43
+msgid "Operating Environment"
+msgstr ""
+
+#: src/utils/Debugger.php:47
+msgid "PHP Version"
+msgstr ""
+
+#: src/utils/Debugger.php:51
+msgid "PHP Operating Mode"
+msgstr ""
+
+#: src/utils/Debugger.php:55
+msgid "Browser Information"
+msgstr ""
+
+#: src/utils/Debugger.php:59
+msgid "WordPress Version"
+msgstr ""
+
+#: src/utils/Debugger.php:63
+msgid "WP Editor.md Version"
+msgstr ""
+
+#: src/utils/Debugger.php:67
+msgid "jQuery Version"
+msgstr ""
+
+#: src/utils/Debugger.php:71
+msgid "Current Roles"
+msgstr ""
+
+#: src/utils/Debugger.php:75
+msgid "Site URL"
+msgstr ""
+
+#: src/utils/Debugger.php:79
+msgid "Home URL"
+msgstr ""
+
+#: src/utils/Debugger.php:83 src/utils/Settings.php:28
+#: src/utils/Settings.php:97
+msgid "Basic Settings"
+msgstr ""
+
+#: src/utils/Debugger.php:87 src/utils/Settings.php:101
+msgid "Editor Style Settings"
+msgstr ""
+
+#: src/utils/Debugger.php:91 src/utils/Settings.php:105
+msgid "Syntax Highlighting Settings"
+msgstr ""
+
+#: src/utils/Debugger.php:95 src/utils/Settings.php:109
+msgid "Emoji Settings"
+msgstr ""
+
+#: src/utils/Debugger.php:99 src/utils/Settings.php:113
+msgid "TOC Settings"
+msgstr ""
+
+#: src/utils/Debugger.php:103 src/utils/Settings.php:117
+msgid "Advanced Settings"
+msgstr ""
+
+#: src/utils/Settings.php:58
+msgid " Options"
+msgstr ""
+
+#: src/utils/Settings.php:80
+msgid "Donate"
+msgstr ""
+
+#: src/utils/Settings.php:81
+msgid ""
+"It is hard to continue development and support for this plugin without "
+"contributions from users like you. If you enjoy using WP-Editor.md and find "
+"it useful, please consider making a donation. Your donation will help "
+"encourage and support the plugin’s continued development and better user "
+"support.Thank You!"
+msgstr ""
+
+#: src/utils/Settings.php:134
+msgid "Use Markdown For Posts And Pages"
+msgstr ""
+
+#: src/utils/Settings.php:135 src/utils/Settings.php:141
+msgid "Go"
+msgstr ""
+
+#: src/utils/Settings.php:140
+msgid "Use Markdown For Comments"
+msgstr ""
+
+#: src/utils/Settings.php:146
+msgid "Support Task Lists"
+msgstr ""
+
+#: src/utils/Settings.php:147
+msgid "Github Flavored Markdown task lists"
+msgstr ""
+
+#: src/utils/Settings.php:153
+msgid "Support Image Paste"
+msgstr ""
+
+#: src/utils/Settings.php:154
+msgid ""
+"Image Paste allows you to copy and paste images from your desktop to the "
+"editor"
+msgstr ""
+
+#: src/utils/Settings.php:160
+msgid "ImagePaste Upload Source"
+msgstr ""
+
+#: src/utils/Settings.php:161
+msgid "Change image paste upload source to https://sm.ms"
+msgstr ""
+
+#: src/utils/Settings.php:167
+msgid "Live preview"
+msgstr ""
+
+#: src/utils/Settings.php:174
+msgid "Sync scrolling"
+msgstr ""
+
+#: src/utils/Settings.php:181
+msgid "Support Html Decode"
+msgstr ""
+
+#: src/utils/Settings.php:182
+msgid "Support rich text analysis"
+msgstr ""
+
+#: src/utils/Settings.php:188
+msgid "Support Front Comment"
+msgstr ""
+
+#: src/utils/Settings.php:194
+msgid "Support Reply Comment For edit-comments.php"
+msgstr ""
+
+#: src/utils/Settings.php:202
+msgid "Editor Theme Style"
+msgstr ""
+
+#: src/utils/Settings.php:203
+msgid "Change the editor theme style"
+msgstr ""
+
+#: src/utils/Settings.php:206
+msgid "default"
+msgstr ""
+
+#: src/utils/Settings.php:207
+msgid "dark"
+msgstr ""
+
+#: src/utils/Settings.php:213
+msgid "Code Theme Style"
+msgstr ""
+
+#: src/utils/Settings.php:214
+msgid "Change the code theme style in the editor"
+msgstr ""
+
+#: src/utils/Settings.php:277
+msgid "Editor.md Static Resource Addres"
+msgstr ""
+
+#: src/utils/Settings.php:278
+msgid "Please make sure the resources are up to date.<br/>"
+msgstr ""
+
+#: src/utils/Settings.php:278
+msgid ""
+"Please upload the resource (the unzipped folder name is \"assets\") to your "
+"server or cdn. If your resource address is: \"http(s)://example.com/myfile/"
+"assets\", you should fill in: \"http(s)://example.com/myfile \". <br/>"
+msgstr ""
+
+#: src/utils/Settings.php:286
+msgid "Auto load mode"
+msgstr ""
+
+#: src/utils/Settings.php:293
+msgid "Line Numbers"
+msgstr ""
+
+#: src/utils/Settings.php:300
+msgid "Show Language"
+msgstr ""
+
+#: src/utils/Settings.php:307
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: src/utils/Settings.php:314
+msgid "PrismJS Syntax Highlight Style"
+msgstr ""
+
+#: src/utils/Settings.php:315
+msgid "Syntax highlight theme style"
+msgstr ""
+
+#: src/utils/Settings.php:326
+msgid "Customize Style"
+msgstr ""
+
+#: src/utils/Settings.php:332
+msgid "Customize Style Library"
+msgstr ""
+
+#: src/utils/Settings.php:333
+msgid ""
+"Get More <a href=\"https://github.com/JaxsonWang/Prism.js-Style\" target="
+"\"_blank\" rel=\"nofollow\">Theme Style</a>"
+msgstr ""
+
+#: src/utils/Settings.php:341
+msgid "Support Emoji"
+msgstr ""
+
+#: src/utils/Settings.php:350
+msgid "Support ToC"
+msgstr ""
+
+#: src/utils/Settings.php:351
+msgid "Table of Contents"
+msgstr ""
+
+#: src/utils/Settings.php:357
+msgid "You need install the plugin"
+msgstr ""
+
+#: src/utils/Settings.php:358
+msgid "If you need to enable this option,you need install the plugin"
+msgstr ""
+
+#: src/utils/Settings.php:365
+msgid "Compatibility Mode"
+msgstr ""
+
+#: src/utils/Settings.php:366
+msgid "Enable WordPress' own jQuery library and load first"
+msgstr ""
+
+#: src/utils/Settings.php:372
+msgid "Debugger"
+msgstr ""
+
+#: src/utils/Settings.php:373
+msgid "Info"
+msgstr ""
+
+#: src/utils/Settings.php:378
+msgid "Hide Ads"
+msgstr ""
+
+#: vendor/jaxsonwang/wp-settings-api-class/src/SettingsApi.php:371
+msgid "Choose File"
+msgstr ""
+
+#: wp-acme-mdx-plus.php:37
+msgid ""
+"Hey, we've noticed that you're running an outdated version of PHP which is "
+"no longer supported. Make sure your site is fast and secure, by upgrading "
+"PHP to the latest version."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP ACME MDX PLUS"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/acme-top/wp-acme-mdx-plus"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"MDX增强插件，建议仅在使用的主题为MDX时启用，否则可能会发生不可预知的结果"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Acme"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.acme.top"
+msgstr ""

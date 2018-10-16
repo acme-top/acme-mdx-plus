@@ -1,0 +1,21 @@
+{
+    "name": "acme-top/wp-acme-mdx-plus",
+    "authors": [{
+        "name": "niqingyang",
+        "email": "niqy@qq.com"
+    }],
+    "require": {
+        "jaxsonwang/wp-settings-api-class": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "acme\\mdx\\plus\\": "src"
+        }
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    }
+}

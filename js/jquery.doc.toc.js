@@ -19,7 +19,7 @@
  * @param  Object options 可选参数
  * @return {[type]}         [description]
  */
-$.fn.mdxToc = function (options) {
+$.fn.docToc = function (options) {
 
     var defaults = {
         // 默认导航元素
@@ -72,18 +72,18 @@ $.fn.mdxToc = function (options) {
                     top: defaultOffsetTop,
                     position: ''
                 });
+            }
 
-                if ($.isFunction(this.getLeft)) {
-                    nav.css({
-                        left: this.getLeft(),
-                    });
-                } else if ($.isFunction(this.getRight)) {
-                    nav.css({
-                        right: this.getRight()
-                    });
-                } else {
-                    console.error("未定义getRight()或者getLeft()");
-                }
+            if ($.isFunction(this.getLeft)) {
+                nav.css({
+                    left: this.getLeft(),
+                });
+            } else if ($.isFunction(this.getRight)) {
+                nav.css({
+                    right: this.getRight()
+                });
+            } else {
+                console.error("未定义getRight()或者getLeft()");
             }
         }
     };
@@ -199,7 +199,14 @@ $.fn.mdxToc = function (options) {
         }
 
         // 获取目前需要高亮的导航元素
-        var elNavs = nav.find("li");
+        var elNavs = null;
+
+        if ($(nav_clone).is(":visible")) {
+            elNavs = nav_clone.find("li");
+        } else {
+            elNavs = nav.find("li");
+        }
+
         var elTargetNav = elNavs.eq(indexNav);
         if (elTargetNav.hasClass(ACTIVE) == false) {
             // 改变样式

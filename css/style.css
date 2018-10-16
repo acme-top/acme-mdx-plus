@@ -4,12 +4,29 @@ div.code-toolbar>.toolbar {
 
 .code-toolbar .toolbar .toolbar-item span {
     border-radius: 2px;
-    padding: 2px 5px 4px 5px;
     line-height: 24px;
+    margin-right: 2px;
+    padding: 2px 5px 4px 5px;
 }
 
 .code-toolbar .toolbar .toolbar-item span:hover {
     color: #bbb;
+}
+
+.code-toolbar .toolbar .toolbar-item a {
+    display: inline;
+    border-radius: 2px;
+    margin-right: 2px;
+    padding: 2px 5px 4px 5px;
+}
+
+.code-toolbar .toolbar .toolbar-item a:hover {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.code-toolbar pre {
+    background-color: #323232;
 }
 
 body.mdui-theme-layout-dark .mdui-drawer .sideImg {
@@ -160,7 +177,7 @@ body.mdui-theme-layout-dark .mdui-typo blockquote p {
     position: absolute;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 999999;
+    z-index: 10000;
 }
 
 .doc-toc a {
@@ -261,6 +278,14 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
     border-radius: 4px 4px;
 }
 
+.PostMainImg0 {
+	border-radius: 4px 4px 0 0 !important;
+}
+
+body.mdui-theme-layout-dark .PostMain .ArtMain0 {
+    border-bottom: 1px solid #000;
+}
+
 .side-info-head {
     top: 30% !important;
     left: 50% !important;
@@ -282,6 +307,10 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
 
 
 /* 老婆大人帮修改的 - start */
+
+.postDiv.list-style-plus .mdui-card-actions p {
+    font: 400 1em / 1.5em 'Source Sans Pro', sans-serif;
+}
 
 @media (min-width: 1024px) {
 
@@ -333,7 +362,7 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
     }
 
     .postDiv.list-style-plus .outofSta {
-        width: 100%;
+        width: 100% !important;
         max-width: 100% !important;
     }
 
@@ -360,6 +389,7 @@ body.mdui-theme-layout-dark .doc-toc>ul>li {
         margin: 0;
         display: block;
         padding: 0 10px;
+        font-weight: 400 !important;
     }
 }
 
